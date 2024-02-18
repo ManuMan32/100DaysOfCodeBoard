@@ -7,6 +7,7 @@ import { ShowAddPostContext } from "./showAddPostContext"
 import { PostListContext } from './postListContext'
 import { DeletePostContext } from "./deletePostContext"
 import PostList from './components/postlist/PostList'
+import Footer from './components/footer/Footer'
 
 function App() {
   const [showAddPost, setShowAddPost] = useState<boolean>(false);
@@ -24,6 +25,7 @@ function App() {
           {(showAddPost) ? <AddPost /> : void 0}
           <PostList />
         </PostListContext.Provider>
+        <Footer />
       </DeletePostContext.Provider>
     </ShowAddPostContext.Provider>
   )
