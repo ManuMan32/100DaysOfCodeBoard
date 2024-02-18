@@ -11,12 +11,11 @@ const AddPost: React.FC = () => {
   const rootInputRef = useRef<HTMLInputElement>(null);
 
   const { postList, setPostList } = usePostListContext();
-  function createPostObject(date: number, day: number, tweet: string, type: "image" | "video", root: string): void {
+  function createPostObject(date: number, day: number, tweet: string, type: "image" | "video" | "null", root: string): void {
+    const attachment = (type == "null") ? null
+      : { type, root }
     const newPost: Post = {
-      date, day, tweet,
-      attachment: {
-        type, root
-      }
+      date, day, tweet, attachment
     }
     const newArr: Post[] = [...postList, newPost];
     setPostList(newArr);
@@ -51,7 +50,7 @@ const AddPost: React.FC = () => {
         <div className="addPost_day addPost_cell">
           <label htmlFor="day">
             Day of #100DaysOfCode
-            <input type="number" name="day" id="day" value="1" ref={dayInputRef} />
+            <input type="number" name="day" id="day" defaultValue="1" ref={dayInputRef} />
           </label>
           <label htmlFor="date">
             Date for the schedule
@@ -59,7 +58,7 @@ const AddPost: React.FC = () => {
               type="date"
               name="date"
               id="date"
-              value={new Date().toISOString().split('T')[0]}
+              defaultValue={new Date().toISOString().split('T')[0]}
               ref={dateInputRef} />
           </label>
         </div>
@@ -79,9 +78,13 @@ const AddPost: React.FC = () => {
             <input type="text" name="file" id="file" ref={rootInputRef} />
           </label>
           <div className="addPost_fileRadios">
+            <label htmlFor="optionNull">
+              Null
+              <input type="radio" id="optionNull" name="optionsFormat" value="null" defaultChecked />
+            </label>
             <label htmlFor="optionImage">
               Image
-              <input type="radio" id="optionImage" name="optionsFormat" value="image" defaultChecked />
+              <input type="radio" id="optionImage" name="optionsFormat" value="image" />
             </label>
             <label htmlFor="optionVideo">
               Video
