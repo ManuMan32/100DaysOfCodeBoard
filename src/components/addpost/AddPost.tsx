@@ -36,7 +36,7 @@ const AddPost: React.FC = () => {
     const months = parseInt(dateArr[1]) - 1;
     const days = parseInt(dateArr[2]);
     return (new Date(years, months, days)).getTime();
-  } 
+  }
 
   useEffect(() => {
     if (!appear) setAppear(true);
@@ -51,11 +51,16 @@ const AddPost: React.FC = () => {
         <div className="addPost_day addPost_cell">
           <label htmlFor="day">
             Day of #100DaysOfCode
-            <input type="number" name="day" id="day" ref={dayInputRef} />
+            <input type="number" name="day" id="day" value="1" ref={dayInputRef} />
           </label>
           <label htmlFor="date">
             Date for the schedule
-            <input type="date" name="date" id="date" ref={dateInputRef} />
+            <input
+              type="date"
+              name="date"
+              id="date"
+              value={new Date().toISOString().split('T')[0]}
+              ref={dateInputRef} />
           </label>
         </div>
 
