@@ -1,0 +1,8 @@
+#root {
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: center;
+  height: 100vh;
+  overflow: auto;
+  background: radial-gradient(#fff, var(--ui1));
+}

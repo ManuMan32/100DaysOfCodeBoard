@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+:root {
+  --ui1: #ccc;
+  --ui2: #aaa;
+  --ui-border1: #222;
+  --ui-border2: #444;
+}

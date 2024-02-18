@@ -1,0 +1,60 @@
+.postList {
+  display: grid;
+  grid-template: 90vh / repeat(2, 1fr);
+  grid-auto-rows: 90vh;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+.post {
+  width: 90%;
+  height: 90%;
+  color: #000;
+  margin: 20px;
+}
+.postDateContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: 2px solid #0004;
+  font-size: 20px;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  opacity: 0.5;
+}
+.postContent {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #fff;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 2px solid #0004;
+  height: 100%;
+}
+.postHashtag { display: block; }
+.postTweet {
+  white-space: pre-wrap;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.postTextBox {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+.postAttachmentContainer {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.postImage, .postVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

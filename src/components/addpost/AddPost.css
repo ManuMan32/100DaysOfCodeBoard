@@ -1,0 +1,63 @@
+.addPost {
+  height: 0;
+  background-color: var(--ui2);
+  transition: .5s height;
+  overflow: hidden;
+}
+.addPostGrid {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  place-items: center;
+  height: 100%;
+  font-size: 20px;
+  color: #222;
+}
+.addPost_cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+.addPostGrid label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.addPostGrid input, .addPostGrid textarea {
+  width: 60%;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.addPostGrid textarea {
+  width: 90%;
+  height: 20vh;
+}
+.addPost_fileRadios {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.addPost_create {
+  align-items: center;
+}
+.addPost_createButton {
+  width: 60%;
+  padding: 20px 0;
+  background-color: var(--ui-border1);
+  border: none;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 25px;
+}
+.addPost_createButton:hover {
+  cursor: pointer;
+  background-color: var(--ui-border2);
+}
+.addPost_createButton:active {
+  opacity: 0.7;
+}
